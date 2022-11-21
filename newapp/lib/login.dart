@@ -129,7 +129,7 @@ class _loginState extends State<login> {
                             child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
-                                'Forget Password?',
+                                'Forgot Password?',
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Color.fromARGB(255, 138, 10, 102),
@@ -145,7 +145,7 @@ class _loginState extends State<login> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
-                                    width: 366,
+                                    width: 340,
                                     height: 75,
                                     child: Padding(
                                       padding: const EdgeInsets.all(11.0),
