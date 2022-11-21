@@ -35,7 +35,11 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
     return MaterialApp(
+=======
+    return const MaterialApp(
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
       debugShowCheckedModeBanner: false,
       home: openpage(),
     );

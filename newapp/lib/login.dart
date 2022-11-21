@@ -36,7 +36,11 @@ class _loginState extends State<login> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
+<<<<<<< HEAD
       backgroundColor: Color.fromARGB(255, 231, 167, 89),
+=======
+      backgroundColor: const Color.fromARGB(255, 231, 167, 89),
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: SafeArea(
@@ -123,13 +127,21 @@ class _loginState extends State<login> {
                           ),
                           TextButton(
                             style: TextButton.styleFrom(
+<<<<<<< HEAD
                               primary: Color.fromARGB(255, 255, 255, 255),
+=======
+                              primary: const Color.fromARGB(255, 255, 255, 255),
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
                             ),
                             onPressed: () {},
                             child: const Padding(
                               padding: EdgeInsets.symmetric(vertical: 8.0),
                               child: Text(
+<<<<<<< HEAD
                                 'Forgot Password?',
+=======
+                                'Forget Password?',
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
                                 style: TextStyle(
                                   fontSize: 14,
                                   color: Color.fromARGB(255, 138, 10, 102),
@@ -145,7 +157,11 @@ class _loginState extends State<login> {
                                     decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(20),
                                     ),
+<<<<<<< HEAD
                                     width: 340,
+=======
+                                    width: 366,
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
                                     height: 75,
                                     child: Padding(
                                       padding: const EdgeInsets.all(11.0),
@@ -162,7 +178,11 @@ class _loginState extends State<login> {
                                           }
                                         },
                                         style: ElevatedButton.styleFrom(
+<<<<<<< HEAD
                                             primary: Color.fromARGB(
+=======
+                                            primary: const Color.fromARGB(
+>>>>>>> 211da92b46f7eb68726a2203735fa2325c802dd1
                                                 236, 255, 136, 39)),
                                         child: const Text(
                                           "LOGIN",
