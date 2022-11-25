@@ -2,88 +2,122 @@ import 'package:flutter/material.dart';
 import 'package:newapp/aboutus.dart';
 import 'package:newapp/courses.dart';
 import 'package:newapp/profile.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class newhome extends StatelessWidget {
+class newhome extends StatefulWidget {
   const newhome({super.key});
 
   @override
+  State<newhome> createState() => _newhomeState();
+}
+
+class _newhomeState extends State<newhome> {
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: const Color.fromARGB(255, 231, 167, 89),
+        backgroundColor: Theme.of(context).scaffoldBackgroundColor,
         body: SafeArea(
-          child: Column(
-            children: [
-              const Padding(
-                padding: EdgeInsets.only(
-                  right: 110,
-                  left: 30,
-                  top: 30,
-                ),
-                child: Text(
-                  'Welcome Guys...',
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 255, 255, 255),
-                    fontSize: 30,
-                  ),
-                ),
-              ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 60,
-                  left: 50,
-                ),
+            child: Center(
+                child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(vertical: 200.h),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(250, 251, 251, 255),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(blurRadius: 20.r),
+                    ]),
                 child: CircleAvatar(
-                  radius: 100,
+                  radius: 300.r,
                   backgroundImage: AssetImage("assets/logo.jpg"),
                 ),
               ),
-              const Padding(
-                padding: EdgeInsets.only(
-                  top: 30,
-                  bottom: 20,
+            ),
+            Padding(
+              padding: EdgeInsets.only(
+                top: 0.h,
+                bottom: 90.h,
+              ),
+            ),
+            TextButton(
+              style:
+                  TextButton.styleFrom(primary: Color.fromARGB(235, 0, 0, 0)),
+              onPressed: () {
+                Navigator.push(
+                    context, MaterialPageRoute(builder: (context) => course()));
+              },
+              child: Padding(
+                padding:
+                    EdgeInsets.symmetric(vertical: 1.0.h, horizontal: 200.w),
+                child: TweenAnimationBuilder(
+                  curve: Curves.bounceOut,
+                  duration: Duration(seconds: 2),
+                  tween: Tween<double>(begin: 12.0, end: 30.0),
+                  builder: (BuildContext context, double value, Widget? child) {
+                    return Text('Courses',
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold, fontSize: 80.sp));
+                  },
                 ),
               ),
-              Padding(
-                  padding: const EdgeInsets.only(
-                    left: 50,
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.h),
+              child: TextButton(
+                style:
+                    TextButton.styleFrom(primary: Color.fromARGB(235, 0, 0, 0)),
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => EditProfilePage()));
+                },
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 200.w),
+                  child: TweenAnimationBuilder(
+                    curve: Curves.bounceOut,
+                    duration: Duration(seconds: 2),
+                    tween: Tween<double>(begin: 12.0, end: 30.0),
+                    builder:
+                        (BuildContext context, double value, Widget? child) {
+                      return Text('Profile',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 80.sp));
+                    },
                   ),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => profile())));
-                      },
-                      child: const Text('  Profile  '))),
-              Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 20,
-                    top: 20,
-                    left: 50,
+                ),
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 10.h),
+              child: TextButton(
+                style:
+                    TextButton.styleFrom(primary: Color.fromARGB(235, 0, 0, 0)),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => about()));
+                },
+                child: Padding(
+                  padding:
+                      EdgeInsets.symmetric(vertical: 8.0.h, horizontal: 200.h),
+                  child: TweenAnimationBuilder(
+                    curve: Curves.bounceOut,
+                    duration: Duration(seconds: 2),
+                    tween: Tween<double>(begin: 12.0, end: 30.0),
+                    builder:
+                        (BuildContext context, double value, Widget? child) {
+                      return Text('About Us',
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold, fontSize: 80.sp));
+                    },
                   ),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => const course())));
-                      },
-                      child: const Text(' Courses '))),
-              Padding(
-                  padding: const EdgeInsets.only(
-                    bottom: 20,
-                    left: 50,
-                  ),
-                  child: ElevatedButton(
-                      onPressed: () {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: ((context) => const about())));
-                      },
-                      child: const Text('About us'))),
-            ],
-          ),
-        ));
+                ),
+              ),
+            ),
+          ],
+        ))));
   }
 }

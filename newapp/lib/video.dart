@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:video_player/video_player.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() => runApp(const VideoPlayerApp());
 
@@ -36,7 +37,7 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     // offers several different constructors to play videos from assets, files,
     // or the internet.
     var videoPlayerController =
-        VideoPlayerController.asset('assets/video/butterfly.mp4');
+        VideoPlayerController.asset('assets/video/Introducing.mp4');
     _controller = videoPlayerController;
 
     // Initialize the controller and store the Future for later use.
@@ -57,8 +58,14 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       appBar: AppBar(
-        title: const Text('Butterfly Video'),
+        title: Text(
+          'Introduction',
+          style: TextStyle(
+            fontSize: 50.sp,
+          ),
+        ),
       ),
       // Use a FutureBuilder to display a loading spinner while waiting for the
       // VideoPlayerController to finish initializing.
@@ -104,3 +111,4 @@ class _VideoPlayerScreenState extends State<VideoPlayerScreen> {
     );
   }
 }
+//new

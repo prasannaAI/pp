@@ -44,6 +44,7 @@ dependencies:
   google_fonts: ^3.0.1
   video_player: ^2.4.7
   hexcolor: ^3.0.1
+  flutter_screenutil: ^5.6.0
 
 dev_dependencies:
   flutter_test:
@@ -69,7 +70,6 @@ flutter:
 
   assets:
     - assets/logo.jpg
-    - assets/Flutter.jpg
     - assets/flutterflow.jpg
     - assets/firebase.jpg
     - assets/react.jpg
@@ -78,7 +78,13 @@ flutter:
     - assets/ns.jpg
     - assets/ch.jpg
     - assets/pent.jpg
+    - assets/Flutter.jpg
+    - assets/nc.jpg
+    - assets/reactlogo.png
+    - assets/Flutter1.png
+    - assets/firebasenew.png
     - assets/video/butterfly.mp4
+    - assets/video/Introducing.mp4
     
     
     

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:newapp/login.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class openpage extends StatefulWidget {
   const openpage({Key? key}) : super(key: key);
@@ -24,21 +25,30 @@ class _openpageState extends State<openpage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color.fromARGB(255, 231, 167, 89),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: SafeArea(
-          child: Column(
-        children: const [
-          Padding(
-            padding: EdgeInsets.only(
-              left: 55,
-              top: 120,
+          child: Center(
+        child: Column(
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 250.w, vertical: 400.h),
+              child: Container(
+                decoration: BoxDecoration(
+                    color: Color.fromARGB(250, 251, 251, 255),
+                    shape: BoxShape.circle,
+                    boxShadow: [
+                      BoxShadow(blurRadius: 20.r),
+                    ]),
+                child: CircleAvatar(
+                  radius: 300.r,
+                  backgroundImage: AssetImage(
+                    "assets/logo.jpg",
+                  ),
+                ),
+              ),
             ),
-            child: CircleAvatar(
-              radius: 150,
-              backgroundImage: AssetImage("assets/logo.jpg"),
-            ),
-          ),
-        ],
+          ],
+        ),
       )),
     );
   }

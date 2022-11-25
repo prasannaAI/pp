@@ -5,6 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:newapp/model/user.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import 'login.dart';
 
@@ -98,7 +99,7 @@ class _signupState extends State<signup> {
   Widget build(BuildContext context) {
     return Scaffold(
       resizeToAvoidBottomInset: true,
-      backgroundColor: Color.fromARGB(255, 231, 167, 89),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
       body: GestureDetector(
         onTap: () => FocusScope.of(context).unfocus(),
         child: SafeArea(
@@ -106,15 +107,16 @@ class _signupState extends State<signup> {
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
-                const Text(
-                  'SIGNUP PAGE',
+                Text(
+                  'New User',
                   style: TextStyle(
                       fontFamily: 'Poppins-Black.ttf',
-                      fontSize: 30,
+                      fontSize: 80.sp,
                       fontWeight: FontWeight.w500),
                 ),
-                const Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 40, vertical: 10),
+                Padding(
+                  padding:
+                      EdgeInsets.symmetric(horizontal: 80.h, vertical: 20.w),
                   child: Divider(
                     thickness: 2,
                     color: Color.fromARGB(255, 241, 237, 232),
@@ -123,7 +125,7 @@ class _signupState extends State<signup> {
                 Container(
                   margin: const EdgeInsets.all(11),
                   decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(11),
+                    borderRadius: BorderRadius.circular(110.r),
                     color: Colors.grey[200],
                   ),
                   child: Padding(
@@ -149,14 +151,15 @@ class _signupState extends State<signup> {
                                 }
                                 return null;
                               }),
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.account_box_rounded,
+                                    size: 70.r,
                                     color: Colors.orange,
                                   ),
                                   labelStyle: TextStyle(
                                       fontFamily: 'Poppins-Light.ttf',
-                                      fontSize: 15,
+                                      fontSize: 40.sp,
                                       color: Colors.black),
                                   labelText: "NAME"),
                             ),
@@ -179,14 +182,15 @@ class _signupState extends State<signup> {
                                 }
                                 return null;
                               }),
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.email,
+                                    size: 70.r,
                                     color: Colors.orange,
                                   ),
                                   labelStyle: TextStyle(
                                       fontFamily: 'Poppins-Light.ttf',
-                                      fontSize: 15,
+                                      fontSize: 40.sp,
                                       color: Colors.black),
                                   labelText: "EMAIL ADDRESS"),
                             ),
@@ -207,14 +211,15 @@ class _signupState extends State<signup> {
                                 }
                                 return null;
                               }),
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.call,
+                                    size: 70.r,
                                     color: Colors.orange,
                                   ),
                                   labelStyle: TextStyle(
                                       fontFamily: 'Poppins-Light.ttf',
-                                      fontSize: 15,
+                                      fontSize: 40.sp,
                                       color: Colors.black),
                                   labelText: "MOBILE NUMBER"),
                             ),
@@ -236,14 +241,15 @@ class _signupState extends State<signup> {
                                 }
                                 return null;
                               },
-                              decoration: const InputDecoration(
+                              decoration: InputDecoration(
                                   prefixIcon: Icon(
                                     Icons.password,
+                                    size: 70.r,
                                     color: Colors.orange,
                                   ),
                                   labelStyle: TextStyle(
                                       fontFamily: 'Poppins-Light.ttf',
-                                      fontSize: 15,
+                                      fontSize: 40.sp,
                                       color: Colors.black),
                                   labelText: "PASSWORD"),
                             ),
@@ -253,10 +259,11 @@ class _signupState extends State<signup> {
                               Column(
                                 children: [
                                   Container(
-                                    width: 366,
-                                    height: 75,
+                                    width: 800.w,
+                                    height: 150.h,
                                     child: Padding(
-                                      padding: const EdgeInsets.all(11.0),
+                                      padding: EdgeInsets.only(
+                                          top: 25.h, left: 170.w),
                                       child: ElevatedButton(
                                         onPressed: () {
                                           if (formKeys.currentState!
@@ -281,10 +288,13 @@ class _signupState extends State<signup> {
                                                     'Please enter a valid details');
                                           }
                                         },
-                                        child: const Text(
+                                        style: ElevatedButton.styleFrom(
+                                            primary: Color.fromARGB(
+                                                236, 255, 136, 39)),
+                                        child: Text(
                                           "SIGNUP",
                                           style: TextStyle(
-                                            fontSize: 18,
+                                            fontSize: 40.sp,
                                             fontWeight: FontWeight.bold,
                                           ),
                                         ),
@@ -299,12 +309,13 @@ class _signupState extends State<signup> {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               Center(
-                                child: Container(
-                                  child: const Text(
+                                child: Padding(
+                                  padding: EdgeInsets.only(top: 30.h),
+                                  child: Text(
                                     'Already An User?..',
                                     style: TextStyle(
-                                      fontSize: 14,
-                                      color: Colors.red,
+                                      fontSize: 40.sp,
+                                      color: Color.fromARGB(255, 0, 0, 0),
                                     ),
                                   ),
                                 ),
@@ -321,15 +332,14 @@ class _signupState extends State<signup> {
                                         MaterialPageRoute(
                                             builder: (context) => login()));
                                   },
-                                  child: const Padding(
-                                    padding:
-                                        EdgeInsets.symmetric(vertical: 8.0),
+                                  child: Padding(
+                                    padding: EdgeInsets.only(top: 30.h),
                                     child: Text(
                                       'LOGIN',
                                       style: TextStyle(
-                                        fontSize: 13,
-                                        color: Colors.red,
-                                      ),
+                                          fontSize: 40.sp,
+                                          color: Color.fromARGB(
+                                              236, 255, 136, 39)),
                                     ),
                                   ),
                                 ),
